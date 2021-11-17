@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+}
+
+html{
+    background-color: whitesmoke;
+}
+
+.menu{
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav{
+    top: 0;
+    left: 0;
+    height: 60px;
+    /*dont want the nav to take too much screen space*/
+    width: 100%;
+    /*the nav has a default width of 100%, but once you use the */
+    /*position fixed command, it will leave a little notch because it's */
+    /*filling up only the container that it is in.*/
+    background-color: dodgerblue;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: larger;
+    margin-right: 12px;
+}
+
+.tagline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pic{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box{
+    display: flex;
+    margin: 25px;
+    width: 600px;
+    /*flex-direction: column;*/
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+p{
+    width: 200px;
+}
+
+.bar{
+    /*consider the total height and width (60px)*/
+    /*this is going to make it fit*/
+    height: 6px;
+    width: 80%;
+    /*he played with these values...started at 12px height and 90p width*/
+    background-color: white;
+    /*use white backgrounds with pretty colors.  black with white*/
+    /*and greys*/
+
+    /*at this point the hamburger was too big, so he went back and*/
+    /*changed the menuIcon justify-content to space evenly.*/
+}
+
+.menuIcon{
+    height: 100%;
+    width: 60px;
+    /*makes it fill it's container (the nav)'*/
+
+    position: absolute;
+    right: 0;
+    /*but wait!!! the menu will now be behind the blue nav bc
+    it's taking this position relative to the body?.
+    he goes back up to nav and uses position fixed to
+    make it relate to nav*/
+
+    cursor: pointer;
+    /*this changes the mouse hovering style.  It let's the */
+    /*user know they can do something'*/
+
+    display: none;
+
+}
+
+.tagline{
+    margin-top: 60px;
+    height: 60px;
+
+}
+
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: dodgerblue;
+    display: flex;
+    justify-content: center;
+    /*align-items: flex-end;*/
+    align-items: center;
+    color: whitesmoke;
+}
+
+@media screen and (max-width: 800px){
+
+    .menuIcon{
+        display: flex;
+        flex-direction: column;
+        /*we are making a hamburger menu, so this will make it go */
+        /*vertical*/
+        /*justify-content: space-between;*/
+        justify-content: space-evenly;
+        align-items: center;
+        /*this makes the space between the layers of the hamburger*/
+        /*can u imagine using margin to do this?!!?!*/
+
+        /*now... how do I get the nav bar to go to the right?  There are two */
+        /*ways to do it*/
+    }
+
+    .menu{
+        position: fixed;
+        top: 60px;
+        /*what does this do exactly?*/
+        right: -150px;
+        /*why -150?  to relate to the width.  it's neg bc*/
+        /*it's going to slide in from the right*/
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: white;
+        background-color: lightskyblue;
+        min-height: 150px;
+        /*he did this last.  this slows it down the pop up a little bit*/
+        transition: 0.125s;
+    }
+
+
+}
