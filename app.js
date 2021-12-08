@@ -12,6 +12,4 @@ document.body.querySelector(".menuIcon").addEventListener(
         }else{
             document.body.querySelector(".menu").style.right="-150px";
         }
-
-
     })
